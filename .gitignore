@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.spec
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Системные
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Данные
+*.xlsx
+*.xls
+*.csv
+input/
+output/
+output_docs/
