@@ -4,13 +4,14 @@ The purpose of this script is to automate the generation of monthly warehouse re
 
 We have three tables from different departments at the end of the month:
 
-`control` - inventory balance according to accounting, what should actually be there;
-`storage1` - inventory balance in warehouse #1;
-`storage2` - inventory balance in warehouse #2.
+* `control` - inventory balance according to accounting, what should actually be there;
+* `storage1` - inventory balance in warehouse #1;
+* `storage2` - inventory balance in warehouse #2.
 
 The product mix and quantity are extracted from the database. Some imbalances are intentionally introduced to demonstrate the script's functionality. The file names are universal and do not differ from month to month; only the contents change according to the reporting date.
 
 
+***
 
 
 Задача данного скрипта - автоматизировать составление ежемесячной отчетности по складу. В результате продажи, некоторые товары могут быть не списаны по разным причинам (например продажа без списания по торговой базе (ошибка продавца), потребление товара на собственные нужды, пересорт и тд.). Для целостности и полноты информации о складе, данная информация стратегически важна для каждого торгового предприятия.
