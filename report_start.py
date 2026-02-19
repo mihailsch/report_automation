@@ -7,17 +7,14 @@ current_dir = os.path.dirname(os.path.abspath(__file__))  # директория
 input_path = os.path.join(current_dir, 'input_docs')
 
 # Создаем папку если ее нет
-#os.makedirs(input_path, exist_ok=True)
-print(input_path)
-# Загружаем таблицы в переменную
+os.makedirs(input_path, exist_ok=True)
 
+# Загружаем таблицы в переменную
 paths = {}
 
 for tab in ['control.xls', 'storage1_main.xlsx', 'storage2_ip.xlsx']:
     file_path = os.path.join(input_path, tab)
     paths[tab] = file_path
-
-print(paths)
 
 try:
     control = pd.read_excel(paths.get('control.xls'))
@@ -30,8 +27,6 @@ except Exception as e:
     print(f'File_read_error: Ошибка при чтении файлов: {e}')
     print('Возможные причины: поврежденные файлы, неверный формат, нет прав доступа')
 
-
-    # Создаем пару название датафрейма - датафрейм для удобства вывода данных
 dfs = {
     'control' : control,
     'storage1_main' : storage1_main,
@@ -58,7 +53,6 @@ merged = pd.merge(merged_pre,
                   storage2_ip,
                   how='outer',
                   on='item_name')
-
 
 merged = merged.fillna(0)
 
@@ -97,7 +91,6 @@ positive_result_final = (
         .sort_values('item_name', ascending=True)
 )
 
-
 negative_result_final = negative_result[['item_name', 'control_except_main']]
 
 negative_result_final = (
@@ -105,7 +98,6 @@ negative_result_final = (
         .rename(columns={'control_except_main' : 'negative_result'})
         .sort_values('item_name', ascending=True)
 )
-
 
 def save_reports(report1_df=positive_result_final, 
                  report2_df=negative_result_final, 
@@ -136,7 +128,6 @@ def save_reports(report1_df=positive_result_final,
     return file1_path, file2_path
 
 save_reports()
-
 
 print('Скрипт завершил работу, нажмите Enter...')
 input()
