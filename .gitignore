@@ -28,9 +28,9 @@ Thumbs.db
 desktop.ini
 
 # Данные
-#*.xlsx
-#*.xls
+*.xlsx
+*.xls
 *.csv
 input/
 output/
-#output_docs/
+output_docs/
