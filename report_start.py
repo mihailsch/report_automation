@@ -23,6 +23,8 @@ try:
 except FileNotFoundError as e:
     print(f'File_read_error: Файл не найден: {e}')
     print('Проверьте, что в папке "input_path" есть файлы: control.xls, storage1_main.xlsx, storage2_ip.xlsx')
+    print('Требуемая структура файлов: "item_name", "quantity"')
+
 except Exception as e:
     print(f'File_read_error: Ошибка при чтении файлов: {e}')
     print('Возможные причины: поврежденные файлы, неверный формат, нет прав доступа')
